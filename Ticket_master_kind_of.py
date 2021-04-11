@@ -1,8 +1,12 @@
 # with this program the user will be able to buy tickets for an even
 
 TICKET_PRICE = 10
-
+SERVICE_CHARGE = 2
 tickets_remaining = 100
+
+# Calculate the final price including a service charge for each transaction
+def calculate_price(number_of_tickets):
+    return number_of_tickets * TICKET_PRICE + SERVICE_CHARGE
 
 # Run this code till there are no tickets left
 while tickets_remaining > 1:
@@ -26,7 +30,7 @@ while tickets_remaining > 1:
         print('You did not input a valid value. {} Please try again'.format(err))
     else:
         # Calculate the price for the total number of thickets
-        total_price = number_of_tickets * TICKET_PRICE
+        total_price = calculate_price(number_of_tickets)
 
         # Output the price to the screen
         print('If you decide to buy the tickets, the total price will be {}'.format(total_price))
